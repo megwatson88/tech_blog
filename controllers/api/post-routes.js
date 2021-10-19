@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { createPool } = require('mysql2/promise');
-const sequalize = require('../config/connection');
-const sequelize = require('../config/connection');
+const sequalize = require('../../config/connection');
+const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../models');
 const withAuth = require('../utils/auth');
 
