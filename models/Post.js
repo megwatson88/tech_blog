@@ -6,3 +6,4 @@ class Post extends Model {
         return
     }
 }
+module.exports = Post;
