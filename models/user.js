@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bycript');
+const bcrypt = require('bcrypt');
 const sequalize = require('sequelize');
 
 //creates user model
@@ -11,7 +11,8 @@ class User extends Model {
 
 //creates fields and comlums for user 
 
-User.init({
+User.init(
+    {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
