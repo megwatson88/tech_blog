@@ -1,6 +1,6 @@
-const User = require('./user');
+const User = require('./User');
 const Post = require('./Post');
-const Comment = require('./comment');
+const Comment = require('./Comment');
 
 Post.belongsTo(User, {
     forginKey: 'userId',

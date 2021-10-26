@@ -1,7 +1,11 @@
 const { Sequalize, Model, DataTypes } = require('sequalize');
 const sequalize = require('../config/connection');
 
-class Comment extends Model {}
+class Comment extends Model {
+    checkPassword(loginPassWord) {
+        return bcrypt.compareSync(loginPassWord, this.password);
+    };
+};
 
 Comment.init(
     {
