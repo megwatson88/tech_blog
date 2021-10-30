@@ -7,7 +7,7 @@ const sequalize = process.env.JAWSDB_URL
     : new Sequalize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
         host: 'localhost',
         dialect: 'mysql',
-        port: 3006
+        port: 3001
     });
 
     module.exports = sequalize;

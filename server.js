@@ -33,6 +33,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/api/index'))
+app.use(require('./controllers/index'))
 
 sequalize.sync({ force: false }).then(()=> {app.listen(PORT, () => console.log(`Now listening on ${PORT}`))})
