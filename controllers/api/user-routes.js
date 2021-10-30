@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment, Vote } = require('../../models');
+const { User, Post, Comment, Vote } = require('../../models/Index');
 
 router.get('/', (req, res) => {
     User.findall({
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
             },
         ]
     })
-    .then(dvUserData => {
+    .then(dbUserData => {
         if (!dbUserData) {
             res.status(404).json({ message: 'No user found with this id'});
             return;

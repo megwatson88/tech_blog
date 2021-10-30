@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
         }
     }
 }
-
+//setting up the sign up form 
 async function signupFormHandler(event) {
     event.preventDefault();
 
