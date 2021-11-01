@@ -3,7 +3,7 @@ const sequalize = require('../config/connection');
 
 class Post extends Model {
     
-}
+};
 
 Post.init(
 {
