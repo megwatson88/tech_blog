@@ -2,7 +2,9 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const connect = require('connect');
+//const connect = require('connect');
+const helpers = require('./utils/helpers');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001; 
@@ -14,7 +16,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.set('trust proxy', 1);
 
 
-const http = require('http');
+//const http = require('http');
 
 
 const sess = {
@@ -27,7 +29,7 @@ const sess = {
     })
 };
 
-const helpers = require('./utils/helpers');
+
 
 const hbs = exphbs.create({ helpers });
 
