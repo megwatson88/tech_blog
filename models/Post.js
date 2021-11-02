@@ -1,5 +1,5 @@
-const { Model, DataType } = require('sequalize');
-const sequalize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Post extends Model {
     
@@ -7,11 +7,11 @@ class Post extends Model {
 
 Post.init(
 {
-    title: DataType.STRING,
-    body: DataType.STRING
+    title: DataTypes.STRING,
+    body: DataTypes.STRING
 },
 {
-    sequalize
+    sequelize
 }
 
 );
