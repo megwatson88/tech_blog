@@ -1,11 +1,8 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {
-    checkPassword(loginPassWord) {
-        return bcrypt.compareSync(loginPassWord, this.password);
-    };
-};
+class Comment extends Model {}
+
 
 Comment.init(
     {
@@ -32,9 +29,7 @@ Comment.init(
     },
     {
         sequelize, 
-        freezeTableName: true,
-        underscored: true,
-        modleName: 'comment'
+        
     }
 );
 
