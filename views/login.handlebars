@@ -1,32 +1,19 @@
-<form class="login-form">
+<div class="card">
+  <div class="card-header">
+    <h2>Login</h2>
+  </div>
+  <form id="login-form" class="card-body">
     <div>
-        <label for="email-login">Email:</label>
-        <input type="text" id="email-login" />
+      <label for="username-input-login">Username</label>
+      <input type="text" id="username-input-login" />
     </div>
     <div>
-        <label for="password-login">Password</label>
-        <input type="text" id="password-login"/>
+      <label for="password-input-login" class="form-label">Password</label>
+      <input type="password" id="password-input-login" />
     </div>
-    <div>
-        <label for="submit">Log In</label>
-    </div>
-</form>
-<form class="signup-form">
-    <div>
-        <label for="username-signup">username:</label>
-        <input type="text" id="user-signup"/>
-    </div>
-    <div>
-        <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-    <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
-</form>
-{{!-- need to put in the script thing
-<script src="/" --}}
+    <button type="submit" id="login-btn" class="btn">Login!</button>
+    <a type="button" href="/signup">Sign up instead</a>
+  </form>
+</div>
+
+<script src="/js/login.js"></script>
