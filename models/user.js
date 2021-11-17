@@ -25,7 +25,7 @@ User.init(
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             unique: true,
             validate: {
                 isEmail: true
@@ -42,8 +42,8 @@ User.init(
     {
         hooks: {
             async beforeCreate(newUserData) {
-                updatedUserData.password = await
-                    bcrypt.hash(updatedUserData.password, 10);
+                newUserData.password = await
+                    bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
             async beforeUpdate(updatedUserData) {

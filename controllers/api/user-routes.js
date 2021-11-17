@@ -3,13 +3,14 @@ const { User } = require('../../models/Index');
 
 router.post('/', (req, res) => {
     User.create({
-        username: req.body.username,
-        password: req.body.password
+        userName: req.body.username,
+        password: req.body.password,
+        email: req.body.email
     })
     .then(dbUserData => {
         req.session.save(() => {
             req.session.userId = dbUserData.id;
-            req.session.username = dbUserData.username;
+            req.session.username = dbUserData.userName;
             req.session.loggedIn = true;
             res.json(dbUserData)
         })
@@ -23,7 +24,7 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            username: req.body.username
+            userName: req.body.username
         }
     }).then(dbUserData => {
         if (!dbUserData) {
@@ -32,14 +33,14 @@ router.post('/login', (req, res) => {
         }
         const validatePassword = dbUserData.checkPassword(req.body.password);
 
-        if (!validPassword){
+        if (!validatePassword){
             res.status(400).json({ message: 'wrong password'});
             return
         }
 
         req.session.save(() => {
             req.session.userId = dbUserData.id;
-            req.session.username = dbUserData.username;
+            req.session.username = dbUserData.userName;
             req.session.loggedIn = true;
             
             res.json({ user: dbUserData, message: 'You are logged in'});
